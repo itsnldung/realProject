@@ -7,4 +7,65 @@
     android:layout_height="match_parent"
     tools:context=".AddExerciseActivity">
 
+    <TextView
+        android:id="@+id/exerciseName"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:textSize="34sp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="61dp"
+        tools:text="Exercies name" />
+
+    <TextView
+        android:id="@+id/equipment"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="216dp"
+        android:textSize="34sp"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseName"
+        tools:layout_editor_absoluteX="1dp"
+        tools:text="Equipment" />
+
+    <TextView
+        android:id="@+id/targetedMuscle"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:textSize="34sp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="562dp"
+        tools:text="Targeted Muscle" />
+
+    <EditText
+        android:id="@+id/exerciseNameTxt"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="text"
+        android:textColorHint="@color/hintColor"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseName"
+        tools:layout_editor_absoluteX="1dp" />
+
+    <EditText
+        android:id="@+id/equipmentTxt"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Equipment"
+        android:inputType="text"
+        android:textColorHint="@color/hintColor"
+        app:layout_constraintTop_toBottomOf="@+id/equipment"
+        tools:layout_editor_absoluteX="1dp" />
+
+    <EditText
+        android:id="@+id/targetedMuscleTxt"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Muscle"
+        android:inputType="text"
+        android:textColorHint="@color/hintColor"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/targetedMuscle"
+        tools:layout_editor_absoluteX="1dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

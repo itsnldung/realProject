@@ -23,21 +23,9 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        /*CharSequence[] options = new CharSequence[]{"Bike", "Running"};
-
-        AlertDialog dialog = new AlertDialog.Builder(this)
-                .setTitle("Workouts")
-                .setItems(options, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                    }
-                })
-                .create();*/
-
         Button logBook = findViewById(R.id.logBook);
         logBook.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, LogbookActivity.class);
+            Intent intent = new Intent(MainActivity.this, RoutineLogbookActivity.class);
             startActivity(intent);
         });
 

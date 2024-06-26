@@ -1,7 +1,7 @@
 package de.dung.realproject;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LogbookActivity extends AppCompatActivity {
+public class RoutineLogbookActivity extends AppCompatActivity {
 
     List<String> str;
     ListView listView;
@@ -20,7 +20,7 @@ public class LogbookActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.logbook_layout);
+        setContentView(R.layout.routine_logbook_layout);
 
         str = new ArrayList<>();
         str.add("Leg day");
@@ -34,6 +34,20 @@ public class LogbookActivity extends AppCompatActivity {
                 (this, R.layout.list_item_view, R.id.textView, str);
 
         listView.setAdapter(adapter);
+        listView.setClickable(false);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                if (i == 1) {
+                    Intent intent = new Intent
+                            (RoutineLogbookActivity.this, ExerciseLogbookActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
+
+
+
     }
 }
 
