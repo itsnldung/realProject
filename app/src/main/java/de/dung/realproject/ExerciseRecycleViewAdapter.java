@@ -1,7 +1,6 @@
 package de.dung.realproject;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,37 +11,38 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class ExerciseLogbookRecycleViewAdapter extends RecyclerView.Adapter
-        <ExerciseLogbookRecycleViewAdapter.MyViewHolder> {
+public class ExerciseRecycleViewAdapter extends RecyclerView.Adapter
+        <ExerciseRecycleViewAdapter.MyViewHolder> {
 
-    private Context context;
-    private ArrayList<Exercise> exerciseList;
+    private final Context context;
+    private final List<Exercise> exerciseList;
 
-    public ExerciseLogbookRecycleViewAdapter(Context context, ArrayList<Exercise> exerciseList){
+    public ExerciseRecycleViewAdapter(Context context, List<Exercise> exerciseList){
         this.context = context;
         this.exerciseList = exerciseList;
     }
 
     @NonNull
     @Override
-    public ExerciseLogbookRecycleViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ExerciseRecycleViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         //inflate layout here (giving the layout to the rows)
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.exercise_recycle_item_view,parent);
+        View view = inflater.inflate(R.layout.exercise_recycle_item_view,parent,false);
 
-        return new ExerciseLogbookRecycleViewAdapter.MyViewHolder(view);
+        return new ExerciseRecycleViewAdapter.MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ExerciseLogbookRecycleViewAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ExerciseRecycleViewAdapter.MyViewHolder holder, int position) {
         //assigning values to the views created in the recycle_item_view (row view) based on
         //position of recycle view
 
         holder.exerciseName.setText(exerciseList.get(position).getName());  // accessing the holder attribute "exerciseName" we set below
-        holder.sets.setText(exerciseList.get(position).getSets());
-        holder.reps.setText(exerciseList.get(position).getReps());
-        holder.rpe.setText(exerciseList.get(position).getRpe());
+        holder.sets.setText(String.valueOf(exerciseList.get(position).getSets()));
+        holder.reps.setText(String.valueOf(exerciseList.get(position).getReps()));
+        holder.rpe.setText(String.valueOf(exerciseList.get(position).getRpe()));
 
 
     }

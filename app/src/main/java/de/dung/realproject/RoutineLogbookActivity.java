@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -14,35 +15,48 @@ import java.util.List;
 
 public class RoutineLogbookActivity extends AppCompatActivity {
 
-    List<String> str;
+    List<ListItem> list;
     ListView listView;
+
+    public static class ListItem{
+        String name;
+        Class<? extends AppCompatActivity> activity;
+
+        public ListItem(String name, Class<? extends AppCompatActivity> activity) {
+            this.name = name;
+            this.activity = activity;
+        }
+        @NonNull
+        @Override
+        public String toString() {
+            return name;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.routine_logbook_layout);
 
-        str = new ArrayList<>();
-        str.add("Leg day");
-        str.add("Push day");
-        str.add("Pull day");
-        str.add("Flex day");
+        list = new ArrayList<>();
+        list.add(new ListItem("Leg day", LegDayActivity.class));
+        list.add(new ListItem("Push day", PushDayActivity.class));
+        list.add(new ListItem("Pull day", PullDayActivity.class));
+        list.add(new ListItem("Flex day", FlexDayActivity.class));
 
-        listView = findViewById(R.id.logbook);
+        listView = findViewById(R.id.logBook_listView);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>
-                (this, R.layout.list_item_view, R.id.textView, str);
+        ArrayAdapter<ListItem> adapter = new ArrayAdapter<>
+                (this, R.layout.list_item_view, R.id.textView, list);
 
         listView.setAdapter(adapter);
-        listView.setClickable(false);
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                if (i == 1) {
-                    Intent intent = new Intent
-                            (RoutineLogbookActivity.this, ExerciseLogbookActivity.class);
-                    startActivity(intent);
-                }
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Intent intent = new Intent
+                        (RoutineLogbookActivity.this, list.get(position).activity);
+                startActivity(intent);
             }
         });
 

@@ -6,206 +6,251 @@
     android:layout_height="match_parent"
     android:visibility="visible">
 
-    <TextView
-        android:id="@+id/repsText"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:id="@+id/set_relative_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="Sets: "
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/rep_relative_layout">
 
-    <EditText
-        android:id="@+id/repsNumber"
-        android:layout_width="69dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="12dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintEnd_toStartOf="@+id/plusRepButton"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/minusRepButton"
-        app:layout_constraintTop_toBottomOf="@+id/RepsText" />
+        <TextView
+            android:id="@+id/setsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@null"
+            android:text="Sets"
+            android:textSize="40sp"
+            android:textStyle="bold" />
 
-    <ImageButton
-        android:id="@+id/minusRepButton"
-        android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/set_inner_constraint_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/setsText"
+            android:layout_centerHorizontal="true">
+
+            <ImageButton
+                android:id="@+id/minusSetButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/setsNumber"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/baseline_remove_24"
+                android:adjustViewBounds="true"
+                android:padding="20dp"/>
+
+            <EditText
+                android:id="@+id/setsNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="5"
+                android:gravity="center"
+                android:hint="@string/_0"
+                android:inputType="number"
+                app:layout_constraintEnd_toStartOf="@+id/plusSetButton"
+                app:layout_constraintStart_toEndOf="@+id/minusSetButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/plusSetButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/setsNumber"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/baseline_add_24" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rep_relative_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toStartOf="@+id/repsNumber"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RepsText"
-        app:srcCompat="@drawable/baseline_remove_24" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/set_relative_layout"
+        app:layout_constraintBottom_toTopOf="@+id/exercise_relative_layout">
 
-    <ImageButton
-        android:id="@+id/plusRepButton"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/repsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="Reps"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rep_inner_constraint_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/repsText"
+            android:layout_centerHorizontal="true">
+
+            <ImageButton
+                android:id="@+id/minusRepButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@null"
+                android:padding="20dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/repsNumber"
+                app:srcCompat="@drawable/baseline_remove_24" />
+
+            <EditText
+                android:id="@+id/repsNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="5"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="number"
+                app:layout_constraintEnd_toStartOf="@+id/plusRepButton"
+                app:layout_constraintStart_toEndOf="@+id/minusRepButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/plusRepButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                app:layout_constraintStart_toEndOf="@+id/repsNumber"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/baseline_add_24" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/exercise_relative_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/repsNumber"
-        app:layout_constraintTop_toBottomOf="@+id/RepsText"
-        app:srcCompat="@drawable/baseline_add_24" />
-
-    <ImageButton
-        android:id="@+id/minusSetButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toStartOf="@+id/setsNumber"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/repsText"
-        app:srcCompat="@drawable/baseline_remove_24" />
-
-    <ImageButton
-        android:id="@+id/plusSetButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/setsNumber"
-        app:layout_constraintTop_toBottomOf="@+id/repsText"
-        app:srcCompat="@drawable/baseline_add_24" />
-
-    <TextView
-        android:id="@+id/RepsText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="276dp"
-        android:text="Reps"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/weightNumber"
-        android:layout_width="69dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="12dp"
-        android:ems="10"
-        android:inputType="number"
-        android:scrollbarSize="1dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/excersiseTxt" />
-
-    <EditText
-        android:id="@+id/setsNumber"
-        android:layout_width="69dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="12dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintEnd_toStartOf="@+id/plusSetButton"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/minusSetButton"
-        app:layout_constraintTop_toBottomOf="@+id/repsText" />
-
-    <TextView
-        android:id="@+id/excersiseTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="224dp"
-        android:textSize="34sp"
+        app:layout_constraintTop_toBottomOf="@+id/rep_relative_layout"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:text="Exercise"
-        android:backgroundTint="@color/material_dynamic_primary70"/>
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:id="@+id/exerciseText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/material_dynamic_primary70"
+            android:textSize="40sp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            tools:text="Exercise" />
+
+        <EditText
+            android:id="@+id/weightNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="5"
+            android:gravity="center"
+            android:layout_below="@+id/exerciseText"
+            android:layout_centerHorizontal="true"
+            android:hint="@string/_0"
+            android:inputType="numberDecimal"
+            android:scrollbarSize="1dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/weightNumber">
+
+            <Button
+                android:id="@+id/button25"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:backgroundTint="@color/material_dynamic_primary70"
+                android:text="25"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/button20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button20"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:backgroundTint="@color/material_dynamic_primary70"
+                android:text="20"
+                app:layout_constraintLeft_toRightOf="@+id/button25"
+                app:layout_constraintRight_toLeftOf="@+id/button15"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button15"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:backgroundTint="@color/material_dynamic_primary70"
+                android:text="15"
+                app:layout_constraintLeft_toRightOf="@+id/button20"
+                app:layout_constraintRight_toLeftOf="@+id/button10"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:backgroundTint="@color/material_dynamic_primary70"
+                android:text="10"
+                app:layout_constraintLeft_toRightOf="@+id/button15"
+                app:layout_constraintRight_toLeftOf="@+id/button5"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:backgroundTint="@color/material_dynamic_primary70"
+                android:text="5"
+                app:layout_constraintLeft_toRightOf="@+id/button10"
+                app:layout_constraintRight_toLeftOf="@id/button2_5"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button2_5"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:backgroundTint="@color/material_dynamic_primary70"
+                android:text="2.5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/button5"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/next_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:srcCompat="@drawable/forward" />
 
     <ImageButton
-        android:id="@+id/backButton"
+        android:id="@+id/back_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+
         app:srcCompat="@drawable/back" />
-
-    <Button
-        android:id="@+id/button25"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="9dp"
-        android:text="25"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/button15"
-        app:layout_constraintStart_toStartOf="parent"
-        android:backgroundTint="@color/material_dynamic_primary70"/>
-
-    <Button
-        android:id="@+id/button15"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="3dp"
-        android:text="15"
-        app:layout_constraintBottom_toTopOf="@+id/button20"
-        app:layout_constraintStart_toStartOf="parent"
-        android:backgroundTint="@color/material_dynamic_primary70"/>
-
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginEnd="46dp"
-        android:layout_marginBottom="3dp"
-        android:text="10"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:backgroundTint="@color/material_dynamic_primary70"/>
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginEnd="46dp"
-        android:text="5"
-        android:backgroundTint="@color/material_dynamic_primary70"
-        app:layout_constraintBottom_toTopOf="@+id/button2_5"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/button20"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="40dp"
-        android:text="20"
-        app:layout_constraintBottom_toTopOf="@+id/backButton"
-        app:layout_constraintStart_toStartOf="parent"
-        android:backgroundTint="@color/material_dynamic_primary70"/>
-
-    <Button
-        android:id="@+id/button2_5"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginEnd="46dp"
-        android:text="2.5"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton6"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:backgroundTint="@color/material_dynamic_primary70"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
