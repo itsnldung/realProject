@@ -2,4 +2,7 @@
     <string name="app_name">realProject</string>
     <string name="_0">0</string>
     <string name="hallo">hallo</string>
+    <string name="sets">Sets</string>
+    <string name="reps">Reps</string>
+    <string name="rpe">RPE %</string>
 </resources>

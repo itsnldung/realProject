@@ -4,68 +4,96 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_constraint_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AddExerciseActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/exerciseName"
-        android:layout_width="409dp"
+    <LinearLayout
+        android:id="@+id/exerciseName_linear_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="34sp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="61dp"
-        tools:text="Exercies name" />
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/equipment_linear_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/equipment"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="216dp"
-        android:textSize="34sp"
-        app:layout_constraintTop_toBottomOf="@+id/exerciseName"
-        tools:layout_editor_absoluteX="1dp"
-        tools:text="Equipment" />
+        <TextView
+            android:id="@+id/exerciseName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="34sp"
+            tools:text="Exercies name" />
 
-    <TextView
-        android:id="@+id/targetedMuscle"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:textSize="34sp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="562dp"
-        tools:text="Targeted Muscle" />
+        <EditText
+            android:id="@+id/exerciseNameTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="text"
+            android:textColorHint="@color/hintColor" />
+    </LinearLayout>
 
-    <EditText
-        android:id="@+id/exerciseNameTxt"
-        android:layout_width="409dp"
+    <LinearLayout
+        android:id="@+id/equipment_linear_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Name"
-        android:inputType="text"
-        android:textColorHint="@color/hintColor"
-        app:layout_constraintTop_toBottomOf="@+id/exerciseName"
-        tools:layout_editor_absoluteX="1dp" />
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/targetedMuscle_linear_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseName_linear_layout">
 
-    <EditText
-        android:id="@+id/equipmentTxt"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Equipment"
-        android:inputType="text"
-        android:textColorHint="@color/hintColor"
-        app:layout_constraintTop_toBottomOf="@+id/equipment"
-        tools:layout_editor_absoluteX="1dp" />
 
-    <EditText
-        android:id="@+id/targetedMuscleTxt"
-        android:layout_width="409dp"
+        <TextView
+            android:id="@+id/equipment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="34sp"
+            app:layout_constraintTop_toBottomOf="@+id/exerciseName_linear_layout"
+            tools:text="Equipment" />
+
+        <EditText
+            android:id="@+id/equipmentTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Equipment"
+            android:inputType="text"
+            android:textColorHint="@color/hintColor" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/targetedMuscle_linear_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Muscle"
-        android:inputType="text"
-        android:textColorHint="@color/hintColor"
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@+id/targetedMuscle"
-        tools:layout_editor_absoluteX="1dp" />
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/equipment_linear_layout">
+
+        <TextView
+            android:id="@+id/targetedMuscleTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Targeted Muscle"
+            android:textSize="34sp" />
+
+        <EditText
+            android:id="@+id/targetedMuscle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Muscle"
+            android:textColorHint="@color/hintColor" />
+
+
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+

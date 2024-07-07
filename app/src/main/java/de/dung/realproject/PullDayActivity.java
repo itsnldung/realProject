@@ -25,10 +25,10 @@ public class PullDayActivity extends ExerciseRecycleView {
         });
 
         String[] exerciseArray = {"Deadlift", "Lat pull down", "Pull up", "Cable row", "Meadows row", "Incline dumbbell curl",
-                "Cable curl", "Overhand-grip barbell curl"};
+                "Cable curl", "Overhand barbell curl"};
         ArrayList<Exercise> exerciseList = new ArrayList<>();
         RecyclerView recyclerView = findViewById(R.id.pullDay_recycleView);
         setUpExerciseList(exerciseList, exerciseArray);
-        setUpRecycleView(exerciseList, recyclerView);
+        setUpRecycleView(exerciseList, recyclerView, "pullDay");
     }
 }

@@ -51,7 +51,7 @@
                 app:layout_constraintRight_toLeftOf="@+id/rep_linear_layout">
 
                 <ImageView
-                    android:id="@+id/minus_set_button2"
+                    android:id="@+id/minus_set_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/baseline_remove_24"

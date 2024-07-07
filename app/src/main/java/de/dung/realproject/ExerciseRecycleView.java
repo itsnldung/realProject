@@ -16,8 +16,8 @@ public abstract class ExerciseRecycleView extends AppCompatActivity {
         }
     }
 
-    protected void setUpRecycleView(List<Exercise> exerciseList, RecyclerView recyclerView) {
-        ExerciseRecycleViewAdapter adapter = new ExerciseRecycleViewAdapter(this, exerciseList);
+    protected void setUpRecycleView(List<Exercise> exerciseList, RecyclerView recyclerView, String key) {
+        ExerciseRecycleViewAdapter adapter = new ExerciseRecycleViewAdapter(this, exerciseList,key);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));

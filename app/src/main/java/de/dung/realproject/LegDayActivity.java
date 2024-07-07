@@ -29,6 +29,6 @@ public class LegDayActivity extends ExerciseRecycleView {
         ArrayList<Exercise> exercisesList = new ArrayList<>();
         RecyclerView recyclerView = findViewById(R.id.legDay_recycleView);
         setUpExerciseList(exercisesList, exerciseArray);
-        setUpRecycleView(exercisesList, recyclerView);
+        setUpRecycleView(exercisesList, recyclerView, "legDay");
     }
 }

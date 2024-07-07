@@ -18,7 +18,7 @@ public class RoutineLogbookActivity extends AppCompatActivity {
     List<ListItem> list;
     ListView listView;
 
-    public static class ListItem{
+    public static class ListItem {
         String name;
         Class<? extends AppCompatActivity> activity;
 
@@ -26,6 +26,7 @@ public class RoutineLogbookActivity extends AppCompatActivity {
             this.name = name;
             this.activity = activity;
         }
+
         @NonNull
         @Override
         public String toString() {
@@ -46,22 +47,17 @@ public class RoutineLogbookActivity extends AppCompatActivity {
 
         listView = findViewById(R.id.logBook_listView);
 
-        ArrayAdapter<ListItem> adapter = new ArrayAdapter<>
-                (this, R.layout.list_item_view, R.id.textView, list);
+        ArrayAdapter<ListItem> adapter = new ArrayAdapter<>(this, R.layout.list_item_view, R.id.textView, list);
 
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Intent intent = new Intent
-                        (RoutineLogbookActivity.this, list.get(position).activity);
+                Intent intent = new Intent(RoutineLogbookActivity.this, list.get(position).activity);
                 startActivity(intent);
             }
         });
-
-
-
     }
 }
 

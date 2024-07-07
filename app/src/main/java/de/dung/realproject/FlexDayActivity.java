@@ -30,6 +30,6 @@ public class FlexDayActivity extends ExerciseRecycleView {
         ArrayList<Exercise> exerciseList = new ArrayList<>();
         RecyclerView recyclerView = findViewById(R.id.flexDay_recycleView);
         setUpExerciseList(exerciseList,exerciseArray);
-        setUpRecycleView(exerciseList,recyclerView);
+        setUpRecycleView(exerciseList,recyclerView, "flexDay");
     }
 }

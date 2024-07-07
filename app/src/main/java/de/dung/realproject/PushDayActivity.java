@@ -29,6 +29,6 @@ public class PushDayActivity extends ExerciseRecycleView {
         RecyclerView recyclerView = findViewById(R.id.pushDay_recycleView);
         ArrayList<Exercise> exercisesList = new ArrayList<>();
         setUpExerciseList(exercisesList, exercisesArray);
-        setUpRecycleView(exercisesList, recyclerView);
+        setUpRecycleView(exercisesList, recyclerView,"pushDay");
     }
 }

@@ -3,22 +3,19 @@ package de.dung.realproject;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 
 public class TrainingActivity extends AppCompatActivity {
-     private int setNumber = 0;
-    private int repNumber =0;
-    private double weight =0;
+    private int setNumber = 0;
+    private int repNumber = 0;
+    private double weight = 0;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,7 +24,7 @@ public class TrainingActivity extends AppCompatActivity {
 
 
         EditText repsNumber = findViewById(R.id.repsNumber);
-        ImageButton minusRepButton =  findViewById(R.id.minusRepButton);
+        ImageButton minusRepButton = findViewById(R.id.minusRepButton);
         ImageButton plusRepButton = findViewById(R.id.plusRepButton);
 
         EditText setsNumber = findViewById(R.id.setsNumber);
@@ -44,12 +41,12 @@ public class TrainingActivity extends AppCompatActivity {
 
 
         minusRepButton.setOnClickListener(v -> {
-            if(repNumber > 0){
+            if (repNumber > 0) {
                 repNumber--;
             }
             repsNumber.setText(String.valueOf(repNumber));
         });
-        plusRepButton.setOnClickListener( new View.OnClickListener() {
+        plusRepButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 repNumber++;
@@ -58,7 +55,7 @@ public class TrainingActivity extends AppCompatActivity {
         });
 
         minusSetButton.setOnClickListener(v -> {
-            if(setNumber >0){
+            if (setNumber > 0) {
                 setNumber--;
             }
             setsNumber.setText(String.valueOf(setNumber));
@@ -120,9 +117,9 @@ public class TrainingActivity extends AppCompatActivity {
         button25.setOnClickListener(new CustomClickListener() {
             @Override
             public void OnDoubleClick(View v) {
-                if(weight - 25*2 >= 0){
-                    weight -= 25*2;
-                }else{
+                if (weight - 25 * 2 >= 0) {
+                    weight -= 25 * 2;
+                } else {
                     weight = 0;
                 }
                 weightNumber.setText(String.valueOf(weight));
@@ -137,9 +134,9 @@ public class TrainingActivity extends AppCompatActivity {
         button20.setOnClickListener(new CustomClickListener() {
             @Override
             public void OnDoubleClick(View v) {
-                if(weight - 20*2 >= 0){
-                    weight -= 20*2;
-                }else{
+                if (weight - 20 * 2 >= 0) {
+                    weight -= 20 * 2;
+                } else {
                     weight = 0;
                 }
                 weightNumber.setText(String.valueOf(weight));
@@ -154,9 +151,9 @@ public class TrainingActivity extends AppCompatActivity {
         button15.setOnClickListener(new CustomClickListener() {
             @Override
             public void OnDoubleClick(View v) {
-                if(weight - 15*2 >= 0){
-                    weight -= 15*2;
-                }else{
+                if (weight - 15 * 2 >= 0) {
+                    weight -= 15 * 2;
+                } else {
                     weight = 0;
                 }
                 weightNumber.setText(String.valueOf(weight));
@@ -171,9 +168,9 @@ public class TrainingActivity extends AppCompatActivity {
         button10.setOnClickListener(new CustomClickListener() {
             @Override
             public void OnDoubleClick(View v) {
-                if(weight - 10*2 >= 0){
-                    weight -= 10*2;
-                }else{
+                if (weight - 10 * 2 >= 0) {
+                    weight -= 10 * 2;
+                } else {
                     weight = 0;
                 }
                 weightNumber.setText(String.valueOf(weight));
@@ -188,10 +185,10 @@ public class TrainingActivity extends AppCompatActivity {
         button5.setOnClickListener(new CustomClickListener() {
             @Override
             public void OnDoubleClick(View v) {
-                if(weight - 5*2 >= 0){
-                    weight -= 5*2;
-                }else{
-                    weight=0;
+                if (weight - 5 * 2 >= 0) {
+                    weight -= 5 * 2;
+                } else {
+                    weight = 0;
                 }
                 weightNumber.setText(String.valueOf(weight));
             }
@@ -205,10 +202,10 @@ public class TrainingActivity extends AppCompatActivity {
         button2_5.setOnClickListener(new CustomClickListener() {
             @Override
             public void OnDoubleClick(View v) {
-                if(weight - 2.5*2 >= 0){
-                    weight -=  2.5*2;
-                }else{
-                    weight=0;
+                if (weight - 2.5 * 2 >= 0) {
+                    weight -= 2.5 * 2;
+                } else {
+                    weight = 0;
                 }
                 weightNumber.setText(String.valueOf(weight));
             }
