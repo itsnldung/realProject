@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toolbar;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,10 +19,32 @@ public class TrainingActivity extends AppCompatActivity {
     private int repNumber = 0;
     private double weight = 0;
 
+    private String activityName = "";
+
+    public String getActivityName() {
+        return activityName;
+    }
+
+    public void setActivityName(String activityName) {
+        this.activityName = activityName;
+    }
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.training_layout);
+        /*TextView toolbarTitle = findViewById(R.id.toolbarTitle);
+        toolbarTitle.setText(getTitle());*/
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setTitle(getActivityName());
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getOnBackPressedDispatcher().onBackPressed();
+            }
+        });
 
 
         EditText repsNumber = findViewById(R.id.repsNumber);

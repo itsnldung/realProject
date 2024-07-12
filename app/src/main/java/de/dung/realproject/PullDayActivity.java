@@ -1,9 +1,12 @@
 package de.dung.realproject;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -12,6 +15,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class PullDayActivity extends ExerciseRecycleView {
+    private String activityName = "Pull Day";
+
+    public String getActivityName() {
+        return activityName;
+    }
+
+    public void setActivityName(String activityName) {
+        this.activityName = activityName;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +34,25 @@ public class PullDayActivity extends ExerciseRecycleView {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+       /* TextView toolbarTitle = findViewById(R.id.toolbarTitle);
+        toolbarTitle.setText(activityName);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowTitleEnabled(false); // Disable default title
+        }
+*/
+        getSupportActionBar().setTitle(getActivityName());
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getOnBackPressedDispatcher().onBackPressed();
+            }
         });
 
         String[] exerciseArray = {"Deadlift", "Lat pull down", "Pull up", "Cable row", "Meadows row", "Incline dumbbell curl",

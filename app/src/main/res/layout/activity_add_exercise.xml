@@ -6,6 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include layout="@layout/toolbar_layout"
+        android:id="@+id/toolbar">
+    </include>
+
+
     <LinearLayout
         android:id="@+id/exerciseName_linear_layout"
         android:layout_width="match_parent"
@@ -14,14 +19,14 @@
         app:layout_constraintBottom_toTopOf="@+id/equipment_linear_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <TextView
             android:id="@+id/exerciseName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="34sp"
-            tools:text="Exercies name" />
+            tools:text="Exercise name" />
 
         <EditText
             android:id="@+id/exerciseNameTxt"
@@ -30,7 +35,8 @@
             android:ems="10"
             android:hint="Name"
             android:inputType="text"
-            android:textColorHint="@color/hintColor" />
+            android:textColorHint="@color/hintColor"
+            android:textSize="24sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -58,6 +64,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Equipment"
+            android:textSize="24sp"
             android:inputType="text"
             android:textColorHint="@color/hintColor" />
     </LinearLayout>
@@ -85,7 +92,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Muscle"
-            android:textColorHint="@color/hintColor" />
+            android:textColorHint="@color/hintColor"
+            android:textSize="24sp"/>
 
 
     </LinearLayout>

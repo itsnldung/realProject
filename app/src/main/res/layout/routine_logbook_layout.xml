@@ -4,15 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/listView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
+    <include
+        layout="@layout/toolbar_layout"
+        android:id="@+id/toolbar_routineLogbook">
 
+    </include>
     <ListView
         android:id="@+id/logBook_listView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:divider="@color/black"
         android:dividerHeight="5dp"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_routineLogbook"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         tools:listitem="@layout/list_item_view" >

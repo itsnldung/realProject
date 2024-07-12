@@ -5,14 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:visibility="visible">
+    <include
+        layout="@layout/toolbar_layout"
+        android:id="@+id/toolbar">
 
+    </include>
     <RelativeLayout
         android:id="@+id/set_relative_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintBottom_toTopOf="@+id/rep_relative_layout">
 
         <TextView

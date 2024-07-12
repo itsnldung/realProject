@@ -4,8 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/pullDay_activity"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".PullDayActivity">
+    <include
+        layout="@layout/toolbar_layout"
+        android:id="@+id/toolbar_pullDay"
+        app:layout_constraintTop_toTopOf="parent"
+       />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/pullDay_recycleView"
@@ -13,5 +19,5 @@
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar_pullDay" />
 </androidx.constraintlayout.widget.ConstraintLayout>
